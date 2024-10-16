@@ -5,24 +5,23 @@ import java.nio.file.Paths;
 import java.time.Month;
 import java.util.List;
 
-public class Main {
+public class BankStatementAnalyzer {
 	private static final String RESOURCES = "src/bank-statement.csv";
-	private static final BankStatementParser bankStatementParser = new BankStatementParser();
 
-	public static void main(String[] args) throws IOException {
+	public void analyze(BankStatementParser bankStatementParser) throws IOException {
 		// getting resource / file
 		final Path path = Paths.get(RESOURCES);
 		// reading from file
 		final List<String> lines = Files.readAllLines(path);
-		
+
 		// parsing data from file
-		List<BankTransaction> transactions = bankStatementParser.parseLinesFromCsv(lines);
+		List<BankTransaction> transactions = bankStatementParser.parseLinesFrom(lines);
 
 		// print data
 		BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(transactions);
 		collectSummary(bankStatementProcessor);
 	}
-	
+
 	private static void collectSummary(BankStatementProcessor bankStatementProcessor) {
 
 		System.out.println("total amount: " + bankStatementProcessor.calculateTotalAmount());
