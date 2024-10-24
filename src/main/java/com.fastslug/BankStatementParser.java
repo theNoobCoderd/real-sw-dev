@@ -1,3 +1,5 @@
+package com.fastslug;
+
 import java.util.List;
 
 public interface BankStatementParser {

@@ -1,3 +1,5 @@
+package com.fastslug;
+
 import java.time.LocalDate;
 
 public class BankTransaction {

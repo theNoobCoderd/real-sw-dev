@@ -1,3 +1,5 @@
+package com.fastslug;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -6,7 +8,7 @@ import java.time.Month;
 import java.util.List;
 
 public class BankStatementAnalyzer {
-	private static final String RESOURCES = "src/bank-statement.csv";
+	private static final String RESOURCES = "src\\main\\resources\\bank-statement.csv";
 
 	public void analyze(BankStatementParser bankStatementParser) throws IOException {
 		// getting resource / file

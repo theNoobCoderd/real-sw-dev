@@ -1,3 +1,5 @@
+package com.fastslug;
+
 import java.io.IOException;
 
 public class MainApplication {
